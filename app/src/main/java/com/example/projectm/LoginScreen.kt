@@ -10,6 +10,11 @@ class LoginScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_screen)
+        supportActionBar?.hide()
+        val mButton = findViewById<View>(R.id.button2) as Button
+        mButton.setOnClickListener {
+            startActivity(Intent(this@LoginScreen, NavigationBar::class.java))
+        }
 
     }
 }
