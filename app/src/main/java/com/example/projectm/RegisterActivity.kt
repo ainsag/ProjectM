@@ -7,20 +7,19 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 
-class LoginScreen : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_screen)
+        setContentView(R.layout.activity_register)
         supportActionBar?.hide()
-        val mButton = findViewById<View>(R.id.button2) as Button
-        mButton.setOnClickListener {
-            startActivity(Intent(this@LoginScreen, NavigationBar::class.java))
+        val nutton = findViewById<View>(R.id.button4) as Button
+        nutton.setOnClickListener {
+            startActivity(Intent(this@RegisterActivity, LoginScreen::class.java))
         }
-        val mutton = findViewById<View>(R.id.button3) as Button
+        val mutton = findViewById<View>(R.id.button5) as Button
         mutton.setOnClickListener {
-            startActivity(Intent(this@LoginScreen, RegisterActivity::class.java))
+            startActivity(Intent(this@RegisterActivity, NavigationBar::class.java))
         }
-
     }
 }
