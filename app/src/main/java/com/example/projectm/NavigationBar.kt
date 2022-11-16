@@ -3,9 +3,9 @@ package com.example.projectm
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.projectm.fragments.AccountFragment
-import com.example.projectm.fragments.HomeFragment
-import com.example.projectm.fragments.SettingsFragment
+import com.example.projectm.AccountFragment
+import com.example.projectm.HomeFragment
+import com.example.projectm.SettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class NavigationBar : AppCompatActivity() {
