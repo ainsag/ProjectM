@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.example.projectm.TitleFragment">
 
-    <!-- The NavHostFragment within the activity_main layout -->
-    <fragment
-        android:id="@+id/myNavHostFragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleConstraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:navGraph="@navigation/navigation"
-        app:defaultNavHost="true" />
+        android:layout_height="match_parent">
+
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -40,12 +36,10 @@
         app:layout_constraintTop_toBottomOf="@+id/button1" />
 
     <Button
-
         android:id="@+id/button1"
         android:layout_width="270dp"
         android:layout_height="60dp"
-        android:background="@drawable/buttonback"
-
+        android:backgroundTint="@color/teal_700"
         android:layout_marginStart="60dp"
         android:layout_marginBottom="106dp"
         android:text="Get Started"
@@ -54,4 +48,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

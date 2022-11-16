@@ -1,26 +1,38 @@
 package com.example.projectm
 
-import android.annotation.SuppressLint
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.example.projectm.databinding.FragmentLoginBinding
 
-class LoginScreen : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_screen)
-        supportActionBar?.hide()
-        val mButton = findViewById<View>(R.id.button2) as Button
-        mButton.setOnClickListener {
-            startActivity(Intent(this@LoginScreen, NavigationBar::class.java))
+class LoginScreen : Fragment() {
+    private var _binding: FragmentLoginBinding? = null
+    private val binding get() = _binding!!
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?): View? {
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        return binding.root
         }
-        val mutton = findViewById<View>(R.id.button3) as Button
-        mutton.setOnClickListener {
-            startActivity(Intent(this@LoginScreen, RegisterActivity::class.java))
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val findNavController : NavController = Navigation.findNavController(view)
+        binding.button2.setOnClickListener {
+            findNavController().navigate(R.id.action_loginScreen_to_homeFragment)
         }
 
+        binding.button3.setOnClickListener {
+            findNavController().navigate(R.id.action_loginScreen_to_registerFragment)
+        }
     }
 }
+
+
