@@ -1,5 +1,6 @@
 package com.example.projectm
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,7 +27,7 @@ class LoginScreen : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val findNavController : NavController = Navigation.findNavController(view)
         binding.button2.setOnClickListener {
-            findNavController().navigate(R.id.action_loginScreen_to_homeFragment)
+            findNavController().navigate(R.id.action_loginScreen_to_NavigationBar)
         }
 
         binding.button3.setOnClickListener {
